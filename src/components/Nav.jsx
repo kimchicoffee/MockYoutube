@@ -1,7 +1,7 @@
 var Nav = (props) => (
   <nav className="navbar">
     <div className="col-md-6 col-md-offset-3">
-      <Search searchYouTube={props.searchYouTube}/>
+      <Search search={props.search}/>
     </div>
   </nav>
 );

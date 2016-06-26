@@ -18,7 +18,7 @@ var searchYouTube = (options, callback) => {
 };
 
 
-window.searchYoutube = searchYoutube;
+window.searchYoutube = searchYouTube;
 
 // var searchYouTube = (options, callback) => {
 //   // TODO

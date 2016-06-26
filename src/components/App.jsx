@@ -26,7 +26,7 @@ class App extends React.Component{
 
     return (
       <div>
-        <Nav/>
+        <Nav search={this.props.search}/>
         <div className="col-md-7">
           <VideoPlayer video={this.state.currentVideo} />
         </div>

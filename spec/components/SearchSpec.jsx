@@ -7,8 +7,8 @@ describe ('Search', function() {
   } = React.addons.TestUtils;
 
   var app, searchYouTubeStub;
-  
-  xdescribe('when rendering live data from YouTube', function() {
+
+  describe('when rendering live data from YouTube', function() {
     beforeEach(function() {
       searchYouTubeStub = sinon.stub();
       searchYouTubeStub.onCall(0).yields(window.fakeVideoData);
@@ -18,7 +18,7 @@ describe ('Search', function() {
         <App searchYouTube={searchYouTubeStub} />
       );
     });
-    
+
     it('should update the video list when typing into the input box', function(done) {
       var videoEntryTitleElements = scryRenderedDOMComponentsWithClass(app, 'video-list-entry-title');
       var searchInputElement = findRenderedDOMComponentWithClass(app, 'form-control');
