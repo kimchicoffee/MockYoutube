@@ -4,7 +4,15 @@ class App extends React.Component {
     this.state = {
       currentVideo: window.exampleVideoData[0],
       videoList: window.exampleVideoData
-    }
+    };
+
+    var context = this;
+    window.searchYouTube({},function(data){
+      context.setState({
+        currentVideo: data.items[0],
+        videoList: data.items
+      })
+    });
   }
 
   onVideoListEntryClick(video) {
@@ -14,9 +22,10 @@ class App extends React.Component {
   }
 
   render () {
+
     return (
       <div>
-        <Nav />
+        <Nav searchYouTube={window.searchYouTube.bind(this)}/>
         <div className="col-md-7">
           <VideoPlayer video={this.state.currentVideo} />
         </div>
