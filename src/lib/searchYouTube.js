@@ -9,7 +9,6 @@ var searchYouTube = (options, callback) => {
   })
   .done(({items}) => {
     if (callback) {
-      console.log(items);
       callback(items);
     }
   })
@@ -19,8 +18,7 @@ var searchYouTube = (options, callback) => {
 };
 
 
-window.searchYouTube = searchYouTube;
-
+window.searchYoutube = searchYoutube;
 
 // var searchYouTube = (options, callback) => {
 //   // TODO
