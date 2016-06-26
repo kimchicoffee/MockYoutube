@@ -6,13 +6,6 @@ class App extends React.Component {
       videoList: window.exampleVideoData
     };
 
-    var context = this;
-    window.searchYouTube({},function(data){
-      context.setState({
-        currentVideo: data.items[0],
-        videoList: data.items
-      })
-    });
   }
 
   onVideoListEntryClick(video) {
