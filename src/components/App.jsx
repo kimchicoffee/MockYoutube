@@ -1,6 +1,7 @@
 class App extends React.Component{
   constructor () {
     super();
+
     this.state = {
       currentVideo: window.exampleVideoData[0],
       videoList: []
@@ -8,10 +9,14 @@ class App extends React.Component{
   }
 
   componentDidMount() {
-    this.props.search({key:window.YOUTUBE_API_KEY, query:"puppies", max:10}, (data) => {
+    this.getYoutubeVideos('freedom');
+  }
+
+  getYoutubeVideos(query){
+    this.props.searchYouTube({key:window.YOUTUBE_API_KEY, query:query, max:10}, (videos) => {
       this.setState({
-        currentVideo: data[0],
-        videoList: data
+        currentVideo: videos[0],
+        videoList: videos
       })
     })
   }
@@ -26,7 +31,7 @@ class App extends React.Component{
 
     return (
       <div>
-        <Nav search={this.props.search}/>
+        <Nav searchYouTube = {_.debounce((input) => this.getYoutubeVideos(input), 500)}/>
         <div className="col-md-7">
           <VideoPlayer video={this.state.currentVideo} />
         </div>

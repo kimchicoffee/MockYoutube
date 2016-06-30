@@ -6,9 +6,10 @@ class Search extends React.Component{
   }
 
   handleChange(event) {
+    this.props.searchYouTube(event.target.value);
     this.setState({
-      {value: event.target.value}
-    })
+      value: event.target.value
+    });
   }
 
   //A controlled <input> has a value prop. Rendering a controlled <input> will reflect the value of the value prop.
